@@ -17,6 +17,17 @@ export default function Uncontrolled() {
   }
   function handleReset(event) {
     event.preventDefault();
+    firstNameRef.current.value = "";
+    lastNameRef.current.value = "";
+    emailRef.current.value = "";
+    porfolioRef.current.value = "";
+    positionSelectRef.current.selectedIndex = 0;
+    descriptionRef.current.value = "";
+
+    const radioButtons = document.getElementsByName("relocate");
+    for (let i = 0; i < radioButtons.length; i++) {
+      radioButtons[i].checked = false;
+    }
   }
   return (
     <form className="uncontrolled" onSubmit={handleSubmit}>
